@@ -123,6 +123,7 @@ img {
     max-width: 100%;
     height: auto;
 }
+
 .user-center-menu {
     width: 100%;
     /*height: 60px;*/
@@ -153,37 +154,51 @@ img {
     color: #dadada;
 }
 
-.unite-no-honor p,.unite-have-honor p {
+.unite-no-honor p, .unite-have-honor p {
     line-height: 80px;
     font-size: 1em;
     text-align: center;
 }
-.unite-get-point{
-    float: left; background-image: url('../images/dfjl.png');
+
+.unite-get-point {
+    float: left;
+    background-image: url('../images/dfjl.png');
 }
-.unite-loss-point{
-    float: right; background-image: url('../images/kfjl.png');
+
+.unite-loss-point {
+    float: right;
+    background-image: url('../images/kfjl.png');
 }
+
 .unite-point {
-    width: 50%;height: 100%;background-repeat: no-repeat;background-size: 20%;background-position: 50% 25%;
+    width: 50%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 20%;
+    background-position: 50% 25%;
 }
+
 .unite-p {
     margin: 5px 0;
     padding: 0 10px;
     line-height: 14px;
 }
+
 .unite-span-text {
     margin-left: 1em;
     color: rgba(168, 168, 168, 0.97);
 }
+
 .unite-col {
     text-align: center;
     color: rgba(168, 168, 168, 0.97);
     margin: 10px 0;
 }
+
 .unite-col span {
     display: block;
 }
+
 .unite-bar {
     margin-top: 10px;
     background-image: url("../images/bar.jpg");
@@ -193,6 +208,7 @@ img {
     background-position: center;
     border-radius: 10px;
 }
+
 .unite-a-title {
     display: inline-block;
     color: white;
@@ -200,6 +216,7 @@ img {
     margin-left: 3em;
     font-size: 18px;
 }
+
 .unite-bar p {
     color: white;
     position: relative;
@@ -207,6 +224,7 @@ img {
     right: 0;
     text-align: right;
 }
+
 .unite-img {
     align-content: center;
     margin-top: 10px;
@@ -216,15 +234,38 @@ img {
     background-position: center;
     border-radius: 10px;
 }
+
 .unite-col6 {
     text-align: center;
 }
+
 .unite-padding-right {
     padding-right: 6px;
 }
+
 .unite-padding-left {
     padding-left: 6px;
 }
+
 .unite-center {
     text-align: center;
+}
+
+.unite-head-image {
+    width: 100%;
+    height: 200px;
+    background-image: url("../images/bar.jpg");
+}
+.unite-max-height {
+    height: 2em;
+    max-height: 2em;
+}
+.unite-bottom {
+    color: #a8a8a8;
+}
+.unite-body {
+    color: #000000;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    text-overflow: ellipsis;
 }
