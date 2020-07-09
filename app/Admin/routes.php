@@ -19,5 +19,10 @@ Route::group([
     $router->resource('signs', SignController::class);
     $router->resource('red-or-blacks', RankController::class);
     $router->resource('dynamics', DynamicController::class);
+    $router->resource('thumbs', ThumbController::class);
+    $router->resource('notices', NoticeController::class);
+    $router->resource('articles', ArticleController::class);
+    $router->resource('activities', ActivityController::class);
+    $router->resource('receptions', ReceptionController::class);
 
 });

@@ -18,6 +18,15 @@ class RankController extends AdminController
      */
     protected $title = '红黑榜';
 
+    public $tag = [
+        1 => '卫生',
+        2 => '文明',
+        3 => '德治',
+        4 => '自治',
+        5 => '法制',
+        6 => '农技',
+    ];
+
     /**
      * Make a grid builder.
      *
@@ -32,7 +41,18 @@ class RankController extends AdminController
             $account = Account::find($userinfo_id);
             return $account->name;
         });
-        $grid->column('tag', __('标签'));
+        $grid->column('tag', __('标签'))->display(function ($tag) {
+            $tags = [
+                1 => '卫生',
+                2 => '文明',
+                3 => '德治',
+                4 => '自治',
+                5 => '法制',
+                6 => '农技',
+            ];
+            return $tags[$tag];
+        });
+        $grid->column('title', __('标题'));
         $grid->column('type', '红黑榜')->display(function ($type) {
             $options = [
                 1 => '红榜',
@@ -71,7 +91,10 @@ class RankController extends AdminController
             $account = Account::find($userinfo_id);
             return $account->name;
         });
-        $show->field('tag', '标签');
+        $show->field('tag', '标签')->as(function ($tag) {
+            return $this->tag[$tag];
+        });
+        $show->field('title', '标签');
         $show->type('红黑榜')->as(function ($type) {
             $r = [
                 1 => '红榜',
@@ -94,12 +117,14 @@ class RankController extends AdminController
 
         $form->display('id', 'ID');
         $form->select('userinfo_id', '姓名')->options(Account::all()->pluck('name', 'id'));
-        $form->text('tag', '标签');
+        $form->select('tag', '标签')->options($this->tag);
+        $form->text('title', '标题');
         $type = [
             1 => '红榜',
             2 => '黑榜',
         ];
         $form->select('type', '红黑榜')->options($type);
+        $form->editor('content', '详情内容');
         $form->datetime('time', '时间')->rules('required');
         $form->footer(function ($footer) {
 
