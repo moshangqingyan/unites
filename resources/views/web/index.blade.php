@@ -11,8 +11,11 @@
     <title>首页</title>
 </head>
 <body>
+<div>
+    <img class="unite-header-image" src="{{ asset('images/001.jpg') }}" alt="">
+</div>
 {{--轮播--}}
-<div style="padding: 10px">
+<div class="unite-swipe">
     <div class="addWrap">
         <div class="swipe" id="mySwipe">
             <div class="swipe-wrap">
@@ -32,71 +35,80 @@
         {{--</ul>--}}
     </div>
 </div>
-
-<p class="unite-p">2020-07-03 星期五</p>
+<div class="layui-row">
+    <div class="layui-col-xs6 layui-col-sm6 layui-col-md6">
+        <span class="unite-sign">签到</span>
+    </div>
+    <div class="layui-col-xs6 layui-col-sm6 layui-col-md6">
+        <span style="float: right; padding-right: 20px">{{ $time }}   </span>
+    </div>
+</div>
 <p class="unite-p">
-    <span class="layui-badge-rim">最新动态</span>
+    <span class="unite-new">最新动态</span>
     <span class="unite-span-text">明天是星期六</span>
 </p>
 
 <div class="layui-container">
     <div class="layui-row">
-        <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 unite-col unite-a" data-src="{{ url('web/user-center') }}">
+        <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 unite-col unite-a" data-src="{{ url('web/') }}">
             <img src="{{ asset('images/juzi.png') }}" alt="">
-            <span>五个汉字了</span>
+            <span>团结有通告</span>
         </div>
-        <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 unite-col unite-a">
+        <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 unite-col unite-a" data-src="{{ url('web/dynamic') }}">
             <img src="{{ asset('images/juzi.png') }}" alt="">
-            <span>五个汉字了</span>
+            <span>团结新动态</span>
         </div>
-        <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 unite-col unite-a">
+        <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 unite-col unite-a" data-src="{{ url('web/mime/red-list') }}">
             <img src="{{ asset('images/juzi.png') }}" alt="">
-            <span>五个汉字了</span>
+            <span>团结红黑榜</span>
         </div>
-        <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 unite-col unite-a">
+        <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 unite-col unite-a" data-src="{{ url('web/volunteer') }}">
             <img src="{{ asset('images/juzi.png') }}" alt="">
-            <span>五个汉字了</span>
+            <span>团结志愿者</span>
         </div>
     </div>
     <div class="layui-row">
-        <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 unite-col">
+        <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 unite-col" data-src="{{ url('web/') }}">
             <img src="{{ asset('images/juzi.png') }}" alt="">
-            <span>五个汉字了</span>
+            <span>我要点个赞</span>
         </div>
-        <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 unite-col">
+        <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 unite-col" data-src="{{ url('web/') }}">
             <img src="{{ asset('images/juzi.png') }}" alt="">
-            <span>五个汉字了</span>
+            <span>我要做捐赠</span>
         </div>
-        <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 unite-col">
+        <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 unite-col" data-src="{{ url('web/policy') }}">
             <img src="{{ asset('images/juzi.png') }}" alt="">
-            <span>五个汉字了</span>
+            <span>我要学政策</span>
         </div>
-        <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 unite-col">
+        <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 unite-col" data-src="{{ url('web/') }}">
             <img src="{{ asset('images/juzi.png') }}" alt="">
-            <span>五个汉字了</span>
+            <span>我要干什么</span>
         </div>
     </div>
-    <div class="unite-bar">
+    {{--志愿活动--}}
+    <div class="unite-bar unite-a" data-src="{{ url('web/volunteer') }}">
         <a class="unite-a-title">明天星期六了</a>
         <p><a href="{{ url('web/user-center') }}">点击查看详情>>></a></p>
     </div>
     <div class="layui-row">
-        <div class="layui-col-xs6 unite-col6 unite-padding-right unite-a" data-src="">
+        {{--// 文化大礼堂--}}
+        <div class="layui-col-xs6 unite-col6 unite-padding-right unite-a" data-src="{{ url('web/article') }}">
             <img src="{{ asset('images/bar.jpg') }}" alt="" class="unite-img">
         </div>
-        <div class="layui-col-xs6 unite-col6 unite-padding-left unite-a">
+        {{--产业大讲堂--}}
+        <div class="layui-col-xs6 unite-col6 unite-padding-left unite-a" data-src="{{ url('web/product') }}">
             <img src="{{ asset('images/bar.jpg') }}" alt="" class="unite-img">
         </div>
     </div>
 
-    <div class="layui-row">
-        <div class="layui-col-xs6 unite-col6 unite-padding-right unite-a" data-src="">
-            <img src="{{ asset('images/bar.jpg') }}" alt="" class="unite-img">
-        </div>
-        <div class="layui-col-xs6 unite-col6 unite-padding-left unite-a">
-            <img src="{{ asset('images/bar.jpg') }}" alt="" class="unite-img">
-        </div>
-    </div>
+    {{--<div class="layui-row">--}}
+        {{--<div class="layui-col-xs6 unite-col6 unite-padding-right unite-a" data-src="">--}}
+            {{--<img src="{{ asset('images/bar.jpg') }}" alt="" class="unite-img">--}}
+        {{--</div>--}}
+        {{--<div class="layui-col-xs6 unite-col6 unite-padding-left unite-a">--}}
+            {{--<img src="{{ asset('images/bar.jpg') }}" alt="" class="unite-img">--}}
+        {{--</div>--}}
+    {{--</div>--}}
 
 </div>
 <div style="height: 70px"></div>

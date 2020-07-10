@@ -12,10 +12,12 @@
 <div class="layui-bg-orange" style="width: 100%; height: 200px;"></div>
 <div style="width: 88%; height: 220px; margin-left: 5%; background-color: #ffffff; border-radius: 10px; border:2px solid #efae05; margin-top: -90px;background-image: url('./images/lang.png');background-repeat: no-repeat;background-size: 100%;background-position: bottom;">
     <div style="width: 100px;height: 100px;border-radius: 60px;border:3px solid #fb800a;margin-left: 34%;margin-top: -50px;background-color: #ffffff; position: relative;">
-        <p style="margin-top: 30px; font-size: 1.5em;color: #333;text-align: center;">李某某</p><p style="font-size: 1em;color: #666;text-align: center;">家庭</p>
+        <p style="margin-top: 30px; font-size: 1.5em;color: #333;text-align: center;">李某某</p>
+        <p style="font-size: 1em;color: #666;text-align: center;">家庭</p>
         <img src="{{ asset('images/yezi.png') }}" style="width: 30px; top: -16px;right: -16px;position: absolute;">
     </div>
-    <p style="text-align: center; font-size: 1em;color: #f79807; line-height: 28px; width: 30%; margin-left: 35%;border-bottom: 1px solid #efae05;">卫生模范户</p>
+    <p style="text-align: center; font-size: 1em;color: #f79807; line-height: 28px; width: 30%; margin-left: 35%;border-bottom: 1px solid #efae05;">
+        卫生模范户</p>
     <div style="width: 90%; margin-left: 5%;">
         <div style="margin-top: 5px;"><p style="line-height: 35px;color: #666; float: left;">综合评价：</p>
             <img src="{{ asset('images/juzi.png') }}" style="width: 20px;float: left;margin: 3px 5px;">
@@ -24,21 +26,44 @@
             <img src="{{ asset('images/juzi.png') }}" style="width: 20px;float: left;margin: 3px 5px;">
             <img src="{{ asset('images/juzi.png') }}" style="width: 20px;float: left;margin: 3px 5px;">
         </div>
-        <div style="clear: both;"> </div>
-        <div><p style="line-height: 35px;color: #666;"><span>团结基金：155</span><a href="{{ url('web/index/rank') }}"><img src="{{ asset('images/phb.png') }}" style="height: 20px;float: right;margin-top: 7px;margin-right: 2%;"></a><span style="float: right; margin-right: 3%;">当前排名：1</span></p></div>
-        <div><p style="line-height: 35px;color: #666;"><span>可兑换基金：110</span><a href="{{ url('web/mime/notes') }}"><img src="{{ asset('images/dhjl.png') }}" style="height: 18.5px;float: right;margin-top: 7px;margin-right: 2%;"></a><span style="float: right; margin-right: 3%;">已兑换基金：45</span></p></div>
+        <div style="clear: both;"></div>
+        <div>
+            <p style="line-height: 35px;color: #666;">
+                <span>团结基金：155</span>
+                <a href="{{ url('web/index/rank') }}">
+                    <img src="{{ asset('images/phb.png') }}"
+                         style="height: 20px;float: right;margin-top: 7px;margin-right: 2%;">
+                </a>
+                <span style="float: right; margin-right: 3%;">当前排名：1</span>
+            </p>
+        </div>
+        <div>
+            <p style="line-height: 35px;color: #666;">
+                <span>可兑换基金：110</span>
+                <a href="{{ url('web/mime/notes') }}">
+                    <img src="{{ asset('images/dhjl.png') }}" style="height: 18.5px;float: right;margin-top: 7px;margin-right: 2%;">
+                </a>
+                <span style="float: right; margin-right: 3%;">已兑换基金：45</span>
+            </p>
+        </div>
     </div>
 </div>
 <div style="width: 88%; height: 80px; margin-left: 5%; background-color: #ffffff; border-radius: 5px; margin-top: 15px;">
     <div class="unite-point unite-get-point">
-        <a href="{{ url('web/mime/integral-get') }}"><p style="text-align: center; font-size: 1em;color: #f79807; line-height: 28px; margin-top: 23%;">获得基金记录</p></a>
+        <a href="{{ url('web/mime/integral-get') }}">
+            <p style="text-align: center; font-size: 1em;color: #f79807; line-height: 28px; margin-top: 23%;">
+                获得基金记录</p>
+        </a>
     </div>
     <div class="unite-point unite-loss-point">
-        <a href="{{ url('web/mime/integral-loss') }}"> <p style="text-align: center; font-size: 1em;color: #f79807; line-height: 28px; margin-top: 23%;">扣除基金记录</p></a>
+        <a href="{{ url('web/mime/integral-loss') }}"><p
+                    style="text-align: center; font-size: 1em;color: #f79807; line-height: 28px; margin-top: 23%;">
+                扣除基金记录</p></a>
     </div>
 </div>
 <div style="width: 88%; height: 250px; margin-left: 5%; background-color: #ffffff; border-radius: 5px; margin-top: 15px;">
-    <p style="border-bottom: 1px solid #efae05; text-align: center;font-size: 1.2em;color: #666;line-height: 45px;">八好村民光荣榜</p>
+    <p style="border-bottom: 1px solid #efae05; text-align: center;font-size: 1.2em;color: #666;line-height: 45px;">
+        八好村民光荣榜</p>
     <div style="width: 100%;">
         <div class="unite-have-honor">
             <p style="line-height: 80px;font-size: 1em;text-align: center;">好卫生</p>
@@ -66,11 +91,11 @@
         </div>
     </div>
 </div>
-<div class="user-center-menu">
-    <a href="{{ url('web/mime/red-list') }}"><p style="line-height: 40px;font-size: 1.2em;color: #f79807;text-align: center;width: 33%;border-top: 3px solid #f79807;background-color: #fff;float:left;">红黑榜</p></a>
-    <a href="{{ url('web/memorabilia') }}"><p style="line-height: 40px;font-size: 1.2em;color: #f79807;text-align: center;width: 33%;border-top: 3px solid #f79807;background-color: #fff;float: left;margin-left: 1px;">大事记</p></a>
-    <a href="zyhd.html"><p style="line-height: 40px;font-size: 1.2em;color: #f79807;text-align: center;width: 33%;border-top: 3px solid #f79807;background-color: #fff;float: left;margin-left: 1px;">志愿活动</p></a>
-</div>
+{{--<div class="user-center-menu">--}}
+{{--<a href="{{ url('web/mime/red-list') }}"><p style="line-height: 40px;font-size: 1.2em;color: #f79807;text-align: center;width: 33%;border-top: 3px solid #f79807;background-color: #fff;float:left;">红黑榜</p></a>--}}
+{{--<a href="{{ url('web/memorabilia') }}"><p style="line-height: 40px;font-size: 1.2em;color: #f79807;text-align: center;width: 33%;border-top: 3px solid #f79807;background-color: #fff;float: left;margin-left: 1px;">大事记</p></a>--}}
+{{--<a href="zyhd.html"><p style="line-height: 40px;font-size: 1.2em;color: #f79807;text-align: center;width: 33%;border-top: 3px solid #f79807;background-color: #fff;float: left;margin-left: 1px;">志愿活动</p></a>--}}
+{{--</div>--}}
 {{--底部导航栏开始--}}
 <div id="menu" class="menu">
     <div id="one" class="subMenu text-center" data-src="{{ url('web/index') }}">

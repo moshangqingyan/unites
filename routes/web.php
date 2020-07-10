@@ -20,7 +20,10 @@ Route::get('/', function () {
 Route::get('web/index/', "IndexController@index");//首页
 Route::get('web/volunteer/', "IndexController@volunteer");//志愿活动
 Route::get('web/dynamic/', "IndexController@dynamic");//最新动态
-Route::get('web/memorabilia/', "MimeController@memorabilia");//大事记
+Route::get('web/article/', "IndexController@article");//文化
+Route::get('web/article/', "IndexController@product");//产品
+Route::get('web/article/', "IndexController@policy");//政策
+//Route::get('web/memorabilia/', "MimeController@memorabilia");//大事记
 Route::get('web/user-center/', "MimeController@userCenter");//我的
 Route::get('web/mime/red-list/', "MimeController@redList");//红榜
 Route::get('web/mime/black-list/', "MimeController@blackList");//黑榜
