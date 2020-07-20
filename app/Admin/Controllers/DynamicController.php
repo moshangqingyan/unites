@@ -68,10 +68,11 @@ class DynamicController extends AdminController
         $form = new Form(new Dynamic());
 
         $form->display('id', 'Id');
-        $form->text('publisher', '发布机构');
-        $form->text('title', '标题');
-        $form->editor('content', '内容');
-        $form->datetime('publish_time', '发布时间');
+        $form->text('publisher', '发布机构')->rules('required');
+        $form->text('title', '标题')->rules('required');
+        $form->image('', '缩略图')->rules('required');
+        $form->editor('content', '内容')->rules('required');
+        $form->datetime('publish_time', '发布时间')->rules('required');
         $form->footer(function ($footer) {
 
             // 去掉`查看`checkbox

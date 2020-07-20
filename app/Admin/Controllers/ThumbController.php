@@ -72,10 +72,10 @@ class ThumbController extends AdminController
         $form = new Form(new Thumb());
 
         $form->display('id', 'Id');
-        $form->image('url', '缩略图');
-        $form->text('introduce', '简介');
-        $form->text('thumbs', '点赞数');
-        $form->radio('show', '是否显示')->options([1 => '隐藏', 2 => '显示'])->default(2);
+        $form->image('url', '缩略图')->rules('required');
+        $form->text('introduce', '简介')->rules('required');
+        $form->text('thumbs', '点赞数')->rules('required');
+        $form->radio('show', '是否显示')->options([1 => '隐藏', 2 => '显示'])->default(2)->rules('required');
         $form->footer(function ($footer) {
 
             // 去掉`查看`checkbox

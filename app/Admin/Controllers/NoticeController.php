@@ -69,8 +69,8 @@ class NoticeController extends AdminController
         $form = new Form(new Notice());
 
         $form->display('id', 'Id');
-        $form->text('title', '标题');
-        $form->textarea('content', '公告内容');
+        $form->text('title', '标题')->rules('required');
+        $form->textarea('content', '公告内容')->rules('required');
         $form->footer(function ($footer) {
 
             // 去掉`查看`checkbox

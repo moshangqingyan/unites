@@ -19,12 +19,12 @@ class RankController extends AdminController
     protected $title = '红黑榜';
 
     public $tag = [
-        1 => '卫生',
-        2 => '文明',
-        3 => '德治',
-        4 => '自治',
-        5 => '法制',
-        6 => '农技',
+        'green' => '卫生',
+        'blue' => '文明',
+        'orange' => '法制',
+        'd' => '法制',
+        'z' => '自治',
+        'g' => '农技',
     ];
 
     /**
@@ -43,13 +43,13 @@ class RankController extends AdminController
         });
         $grid->column('tag', __('标签'))->display(function ($tag) {
             $tags = [
-                1 => '卫生',
-                2 => '文明',
-                3 => '德治',
-                4 => '自治',
-                5 => '法制',
-                6 => '农技',
-            ];
+                'green' => '卫生',
+                'blue' => '文明',
+                'orange' => '法制',
+                'd' => '法制',
+                'z' => '自治',
+                'g' => '农技',
+            ];;
             return $tags[$tag];
         });
         $grid->column('title', __('标题'));
@@ -116,15 +116,15 @@ class RankController extends AdminController
         $form = new Form(new RedOrBlack());
 
         $form->display('id', 'ID');
-        $form->select('userinfo_id', '姓名')->options(Account::all()->pluck('name', 'id'));
-        $form->select('tag', '标签')->options($this->tag);
-        $form->text('title', '标题');
+        $form->select('userinfo_id', '姓名')->options(Account::all()->pluck('name', 'id'))->rules('required');
+        $form->select('tag', '标签')->options($this->tag)->rules('required');
+        $form->text('title', '标题')->rules('required');
         $type = [
             1 => '红榜',
             2 => '黑榜',
         ];
-        $form->select('type', '红黑榜')->options($type);
-        $form->editor('content', '详情内容');
+        $form->select('type', '红黑榜')->options($type)->rules('required');
+        $form->editor('content', '详情内容')->rules('required');
         $form->datetime('time', '时间')->rules('required');
         $form->footer(function ($footer) {
 

@@ -3,11 +3,13 @@
 namespace App\Admin\Controllers;
 
 use App\Account;
+use App\Admin\Actions\Account\Download;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
-use function GuzzleHttp\Psr7\uri_for;
+//use function GuzzleHttp\Psr7\uri_for;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class AccountController extends AdminController
 {
@@ -17,6 +19,21 @@ class AccountController extends AdminController
      * @var string
      */
     protected $title = '用户管理';
+
+    public function code($id = 1)
+    {
+        if (!$id) {
+            return false;
+        }
+        $res = QrCode::format('png')->size(200)->color(255,0,255)->encoding('UTF-8')
+            ->generate(url('admin/user-center/' . $id), public_path("qrCodes/1.png"));
+        var_dump($res);
+        if ($res) {
+            return url($id . '.png');
+        } else {
+            return false;
+        }
+    }
 
     /**
      * Make a grid builder.
@@ -58,6 +75,10 @@ class AccountController extends AdminController
             // 在这里添加字段过滤器
             $filter->equal('name', '姓名');
 
+        });
+        $grid->actions(function ($actions) {
+            // 添加操作
+            $actions->add(new Download());
         });
         return $grid;
     }
@@ -111,8 +132,8 @@ class AccountController extends AdminController
         $form = new Form(new Account());
 
         $form->display('id', 'ID');
-        $form->text('name', '名字');
-        $form->text('tags', '标签');
+        $form->text('name', '名字')->rules('required');
+        $form->text('tags', '标签')->rules('required');
         $options = [
             1 => '好卫生',
             2 => '好生活',

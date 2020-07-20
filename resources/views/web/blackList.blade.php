@@ -22,10 +22,15 @@
 
 </div>
 <div style="padding: 0 10%">
-    <p class="unite-list bcb1bc">&#9312; <span class="layui-badge unite-gray">文明</span> 人生就像是一场修行</p>
-    <p class="unite-list bcb1bc">&#9313; <span class="layui-badge unite-gray">文明</span> 人生就像是一场修行</p>
-    <p class="unite-list bcb1bc">&#9314; <span class="layui-badge unite-gray">文明</span> 人生就像是一场修行</p>
-    <p class="unite-list bcb1bc">&#9315; <span class="layui-badge unite-gray">文明</span> 人生就像是一场修行</p>
+    <?php $i = 9312 ?>
+    @foreach($page as $item)
+        <p class="unite-list FF5722" style="color: gray" data-src="{{ url('web/mime/black-list/' . $item->id) }}">
+            &#{{ $i }}; <span class="layui-badge layui-bg-gray">{{ $text[$item->tag] }}</span> {{ $item->title }}
+        </p>
+        <?php $i++ ?>
+    @endforeach
+    {{--<p class="unite-list bcb1bc">&#9312; <span class="layui-badge unite-gray">文明</span> 人生就像是一场修行</p>--}}
+    {{--<p class="unite-list bcb1bc">&#9313; <span class="layui-badge unite-gray">文明</span> 人生就像是一场修行</p>--}}
     {{--   1-10  --}}
     {{--①    &#9312;     --}}
     {{--②    &#9313;     --}}

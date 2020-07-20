@@ -9,15 +9,16 @@
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.css') }}">
 
 </head>
-<body>
+<body style="background-color: #f3f3f3;">
 <div class="container">
-    <div class="unite-head-image"></div>
+    <!-- <div class="unite-head-image-article"></div> -->
+    <p style="text-align: center;font-size: 1.2em;color: #f79807;border-bottom: 1px solid #f79807;width: 100%;line-height: 45px;">文化大礼堂</p>
     <div class="list-group">
-        <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-        <a href="#" class="list-group-item">Morbi leo risus</a>
-        <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-        <a href="#" class="list-group-item">Vestibulum at eros</a>
+        @foreach($page as $item)
+            <a href="{{ url('web/article/' . $item->id) }}" class="list-group-item">{{ $item->title }}</a>
+        @endforeach
     </div>
+    {{ $page->links() }}
 </div>
 
 </body>

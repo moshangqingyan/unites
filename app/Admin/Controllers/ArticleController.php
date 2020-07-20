@@ -76,15 +76,15 @@ class ArticleController extends AdminController
         $form = new Form(new Article());
 
         $form->display('id', 'Id');
-        $form->text('publisher', '发布者');
-        $form->text('title', '标题');
-        $form->editor('content', '详情内容');
+        $form->text('publisher', '发布者')->rules('required');
+        $form->text('title', '标题')->rules('required');
+        $form->editor('content', '详情内容')->rules('required');
         $options = [
             1 => '文化大礼堂',
             2 => '产品大讲堂',
             3 => '我要学政策',
         ];
-        $form->select('type', '文章栏目')->options($options);
+        $form->select('type', '文章栏目')->options($options)->rules('required');
         $form->footer(function ($footer) {
 
             // 去掉`查看`checkbox

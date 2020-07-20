@@ -91,16 +91,16 @@ class SignController extends AdminController
         $form = new Form(new Sign());
 
         $form->display('id', 'Id');
-        $form->select('volunteer_id', '志愿主题')->options(Volunteer::all()->pluck('title', 'id'));
-        $form->text('name', '姓名');
-        $form->radio('six', '性别')->options([1 => '男', 2 => '女'])->default(1);
+        $form->select('volunteer_id', '志愿主题')->options(Volunteer::all()->pluck('title', 'id'))->rules('required');
+        $form->text('name', '姓名')->rules('required');
+        $form->radio('six', '性别')->options([1 => '男', 2 => '女'])->default(1)->rules('required');
         $form->text('age', '年龄')->rules('required|regex:/^\d+$/', [
             'regex' => '必须全部为数字',
         ]);
-        $form->text('occupation', '职业');
-        $form->mobile('phone', '手机号码');
-        $form->text('hobby', '爱好');
-        $form->text('declaration', '志愿宣言');
+        $form->text('occupation', '职业')->rules('required');
+        $form->mobile('phone', '手机号码')->rules('required');
+        $form->text('hobby', '爱好')->rules('required');
+        $form->text('declaration', '志愿宣言')->rules('required');
         $form->footer(function ($footer) {
 
             // 去掉`查看`checkbox

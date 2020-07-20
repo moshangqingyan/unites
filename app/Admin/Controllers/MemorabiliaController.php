@@ -66,10 +66,10 @@ class MemorabiliaController extends AdminController
         $form = new Form(new Memorabilia());
 
         $form->display('id', 'ID');
-        $form->text('title', '标题');
-        $form->text('introduce', '简介');
-//        $form->text('content', '内容');
-        $form->editor('content', '内容');
+        $form->text('title', '标题')->rules('required');
+        $form->text('introduce', '简介')->rules('required');
+//        $form->text('content', '内容')->rules('required');
+        $form->editor('content', '内容')->rules('required');
         $form->footer(function ($footer) {
 
             // 去掉`查看`checkbox

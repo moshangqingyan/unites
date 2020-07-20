@@ -24,5 +24,7 @@ Route::group([
     $router->resource('articles', ArticleController::class);
     $router->resource('activities', ActivityController::class);
     $router->resource('receptions', ReceptionController::class);
+    $router->resource('donations', DonationController::class);
+    $router->get('code', 'AccountController@code');
 
 });

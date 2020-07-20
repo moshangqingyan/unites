@@ -30,7 +30,7 @@ class ReceptionController extends AdminController
         $grid->column('id', __('Id'));
         $grid->column('userinfo_id', __('姓名'))->display(function ($userinfo_id) {
             $account = Account::find($userinfo_id);
-            return $account->name;
+            return @$account->name;
         });
         $grid->column('name', __('签到姓名'));
         $grid->column('created_at', __('创建时间'));
@@ -60,7 +60,7 @@ class ReceptionController extends AdminController
         $show->userinfo_id('姓名')->unescape()->as(function ($userinfo_id) {
 
             $account = Account::find($userinfo_id);
-            return $account->name;
+            return @$account->name;
 
         });
         $show->field('name', __('签到姓名'));
@@ -81,7 +81,7 @@ class ReceptionController extends AdminController
         $form = new Form(new Reception());
         $form->display('id', 'ID');
         $form->select('userinfo_id', '姓名')->options(Account::all()->pluck('name', 'id'));
-        $form->text('name', '签到姓名');
+        $form->text('name', '签到姓名')->rules('required');
 
         $form->footer(function ($footer) {
 

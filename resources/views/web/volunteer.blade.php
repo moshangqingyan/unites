@@ -15,48 +15,51 @@
     <div class="layui-form">
         <table class="layui-table" lay-skin="line">
         <colgroup>
-            <col width="70%">
-            <col width="30%">
+            <col width="78%">
+            <col width="22%">
             <col>
         </colgroup>
         <tbody>
-        <tr class="unite-a" data-src="{{ url('web/volunteer/') }}">
+        @foreach($page as $item)
+        <tr class="unite-a" data-src="{{ url('web/volunteer/' . $item->id) }}">
             <td>
-                <p class="unite-p-title">扶老人过马路</p>
-                <p class="unite-p-text">少年先锋队</p>
-                <p class="unite-p-text">2020-07-12 9:00 - 2020-07-12 18:00</p>
+                <p class="unite-p-title">{{ $item->title }}</p>
+                <p class="unite-p-text">{{ $item->publisher }}</p>
+                <p class="unite-p-text">{{ $item->start_time }} - {{ $item->end_time }}</p>
             </td>
             <td style="text-align: right">
-                <span class="layui-badge layui-bg-green">报名中</span>
+                {{-- 1报名中，2活动中，3已完成 --}}
+                <span class="layui-badge {{ $class[$item->type] }}">{{ $text[$item->type] }}</span>
             </td>
         </tr>
-        <tr class="unite-a" data-src="{{ url('web/volunteer/') }}">
-            <td>
-                <p class="unite-p-title">扶老人过马路</p>
-                <p class="unite-p-text">少年先锋队</p>
-                <p class="unite-p-text">2020-07-12 9:00 - 2020-07-12 18:00</p>
-            </td>
-            <td style="text-align: right">
-                <span class="layui-badge layui-bg-blue">活动中</span>
-            </td>
-        </tr>
-        <tr class="unite-a" data-src="{{ url('web/index/') }}">
-            <td>
-                <p class="unite-p-title">扶老人过马路</p>
-                <p class="unite-p-text">少年先锋队</p>
-                <p class="unite-p-text">2020-07-12 9:00 - 2020-07-12 18:00</p>
-            </td>
-            <td style="text-align: right">
-                <span class="layui-badge">已完成</span>
-            </td>
-        </tr>
+        @endforeach
+        {{--<tr class="unite-a" data-src="{{ url('web/volunteer/') }}">--}}
+            {{--<td>--}}
+                {{--<p class="unite-p-title">扶老人过马路</p>--}}
+                {{--<p class="unite-p-text">少年先锋队</p>--}}
+                {{--<p class="unite-p-text">2020-07-12 9:00 - 2020-07-12 18:00</p>--}}
+            {{--</td>--}}
+            {{--<td style="text-align: right">--}}
+                {{--<span class="layui-badge layui-bg-blue">活动中</span>--}}
+            {{--</td>--}}
+        {{--</tr>--}}
+        {{--<tr class="unite-a" data-src="{{ url('web/index/') }}">--}}
+            {{--<td>--}}
+                {{--<p class="unite-p-title">扶老人过马路</p>--}}
+                {{--<p class="unite-p-text">少年先锋队</p>--}}
+                {{--<p class="unite-p-text">2020-07-12 9:00 - 2020-07-12 18:00</p>--}}
+            {{--</td>--}}
+            {{--<td style="text-align: right">--}}
+                {{--<span class="layui-badge">已完成</span>--}}
+            {{--</td>--}}
+        {{--</tr>--}}
         </tbody>
     </table>
     </div>
-
-    <div style="width: 30%;height: 30px;background-color: #f79807;border-radius: 5px;margin-left: 35%;">
-        <p style="height: 30px;line-height: 30px;width: 100%;text-align: center;color: #ffffff;font-size: 1em;margin-top: 20px;">查看更多…</p>
-    </div>
+    {{ $page->links() }}
+    {{--<div style="width: 30%;height: 30px;background-color: #f79807;border-radius: 5px;margin-left: 35%;">--}}
+        {{--<p style="height: 30px;line-height: 30px;width: 100%;text-align: center;color: #ffffff;font-size: 1em;margin-top: 20px;">查看更多…</p>--}}
+    {{--</div>--}}
 </div>
 {{--底部导航栏开始--}}
 <div id="menu" class="menu">

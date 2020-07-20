@@ -79,17 +79,17 @@ class VolunteerController extends AdminController
         $form = new Form(new Volunteer());
 
         $form->display('id', 'Id');
-        $form->text('publisher', '发布者');
-        $form->text('title', '志愿主题');
-        $form->editor('content', '详情内容');
+        $form->text('publisher', '发布者')->rules('required');
+        $form->text('title', '志愿主题')->rules('required');
+        $form->editor('content', '详情内容')->rules('required');
         $options = [
             1 => '报名中',
             2 => '活动中',
             3 => '已结束',
         ];
-        $form->select('type', '类型')->options($options);
-        $form->datetime('start_time', '开始时间')->format('YYYY-MM-DD HH:mm:ss');
-        $form->datetime('end_time', '结束时间')->format('YYYY-MM-DD HH:mm:ss');
+        $form->select('type', '类型')->options($options)->rules('required');
+        $form->datetime('start_time', '开始时间')->format('YYYY-MM-DD HH:mm:ss')->rules('required');
+        $form->datetime('end_time', '结束时间')->format('YYYY-MM-DD HH:mm:ss')->rules('required');
         $form->footer(function ($footer) {
 
             // 去掉`查看`checkbox

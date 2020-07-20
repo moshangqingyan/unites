@@ -1,35 +1,69 @@
 .unite-title {
+
     text-align: center;
-    color: #0f6674;
+
+    color: #999;
+
     margin-top: 1em;
-    font-size: 2em;
+
+    font-size: 1.5em;
+
 }
+
 .unite-background-gray {
-    background-color: #f0e2f0;
+
+    background-color: #f3f3f3;
+
 }
+
 .unite-list {
+
     line-height: 1.66em;
+
     background-color: #ffffff;
+
     margin: 10px 0;
+
     padding: 4px 1em;
+
 }
+
 .FF5722 {
+
     color: #FF5722;
+
 }
+
 .bcb1bc {
+
     color: #bcb1bc;
+
 }
+
 .unite-gray {
+
     background-color: #a8a8a8 !important;
+
     color: #FFF;
+
 }
+
 .unite-center {
+
     text-align: center;
+
 }
+
 .unite-p-text {
+
     color: #A8A8A8;
+
 }
+
 .unite-p-title {
+
     color: #000000;
+
     font-weight: bold;
+
 }

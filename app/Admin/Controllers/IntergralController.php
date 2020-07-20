@@ -99,13 +99,13 @@ class IntergralController extends AdminController
     {
         $form = new Form(new Integral());
         $form->display('id', 'ID');
-        $form->select('userinfo_id', '姓名')->options(Account::all()->pluck('name', 'id'));
+        $form->select('userinfo_id', '姓名')->options(Account::all()->pluck('name', 'id'))->rules('required');
         $type = [
             1 => '获得',
             2 => '扣除',
             3 => '兑换',
         ];
-        $form->select('type', '积金类型')->options($type);
+        $form->select('type', '积金类型')->options($type)->rules('required');
         $form->text('integral', '基金')->rules('required|regex:/^\d+$/', [
             'regex' => '必须全部为数字',
         ]);
